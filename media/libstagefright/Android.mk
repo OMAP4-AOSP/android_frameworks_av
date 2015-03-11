@@ -118,6 +118,10 @@ LOCAL_SHARED_LIBRARIES += \
         libstagefright_foundation \
         libdl
 
+ifeq ($(TARGET_BOARD_PLATFORM),omap4)
+LOCAL_CFLAGS := -DBOARD_CANT_REALLOCATE_OMX_BUFFERS
+endif
+
 LOCAL_CFLAGS += -Wno-multichar
 
 LOCAL_MODULE:= libstagefright
